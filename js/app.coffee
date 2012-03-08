@@ -42,6 +42,9 @@ class ApplicationController
     @title = event.target.value
   addNew: ->
     @model.get('todos').push(title: @title) if @title
+    # and clear input field
+    new_todo_field = document.getElementById 'new-todo'
+    new_todo_field.value = ''
 
 class TodoController
   toggleDone: -> @model.toggleDone()

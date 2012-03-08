@@ -132,10 +132,12 @@
 
     ApplicationController.prototype.addNew = function() {
       if (this.title) {
-        return this.model.get('todos').push({
+        this.model.get('todos').push({
           title: this.title
         });
       }
+      new_todo_field = document.getElementById('new-todo');
+      return new_todo_field.value = '';
     };
 
     return ApplicationController;
